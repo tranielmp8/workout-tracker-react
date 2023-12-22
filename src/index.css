@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+  
+}
+
+body {
+  background-color: #1f2833;
+}
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+  color: #66fcf1;
+}
+.navbar h1 {
+  color: #66fcf1;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.link-item {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+  color: #66fcf1;
+  transition: .3s ease-in-out;
+  font-weight: 600;
+
+}
+.link-item:hover {
+  color: white;
+  font-size: 20px;
+}
+
+.home > h1 {
+  color: #66fcf1;
+}
+
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* blog previews / list */
+.workout-preview {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #66fcf1;
+  /* border-left: 3px solid #66fcf1; */
+  background: #0b0c10;
+  color: #66fcf1;
+  transition: .2s ease-in;
+}
+.workout-preview:hover {
+  
+  border-radius: 10px;
+
+}
+.workout-preview h2 {
+  font-size: 20px;
+  color: #66fcf1;
+  margin-bottom: 8px;
+}
+.workout-preview p {
+  font-size: 18px;
+  color: #66fcf1;
+
+}
+.workout-preview a{
+  text-decoration: none;
+}
+
+.workout-content > p {
+  color: #66fcf1;
+}
+
+
+/* create new blog form */
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display: block;
+  font-size: 19px;
+  color: #66fcf1;
+}
+.create h2 {
+  font-size: 20px;
+  color: #66fcf1;
+  margin-bottom: 30px;
+}
+.create input, .create textarea, .create select {
+  width: 100%;
+  background: #eeeeec;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  box-sizing: border-box;
+  font-size: 18px;
+  display: block;
+  font-weight: 700;
+}
+
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: flex-end; */
+  
+}
+
+.flex > div {
+  margin-left: .3rem;
+}
+
+.create button {
+  background: #66fcf1;
+  margin: .3rem;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.delete {
+  background: #1f2833;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  border: 0;
+  padding: 7px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s  ease-in;
+}
+
+.delete:hover {
+  box-shadow: -10px 1px #66fcf1;
+}
+
+.workout-details {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.workout-details > h2{
+  color: #66fcf1;
+  margin-right: .4rem;
+}
+
+.buttons > button {
+  background: #66fcf1;
+  margin: .3rem;
+  color: #1f2833;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
