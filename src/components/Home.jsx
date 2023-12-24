@@ -3,7 +3,7 @@ import WorkoutList from "./WorkoutList";
 
 const Home = () => {
   
-  const { data: workouts, error } = useFetch('http://localhost:8000/workouts')
+  const { data: workouts, error } = useFetch('http://localhost:8080/workouts')
 
   // useEffect(() => {
   //    fetch('http://localhost:8000/workoutss')

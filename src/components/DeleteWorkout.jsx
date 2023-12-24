@@ -4,10 +4,10 @@ import useFetch from "../hooks/useFetch"
 const DeleteWorkout = () => {
     const {id} = useParams()
     const navigate = useNavigate()
-    const { data: workout } = useFetch('http://localhost:8000/workouts/' + id)
+    const { data: workout } = useFetch('http://localhost:8080/workouts/' + id)
 
     const handleDelete = async() => {
-      const response = await fetch('http://localhost:8000/workouts/' + id, {
+      const response = await fetch('http://localhost:8080/workouts/' + id, {
         method: 'DELETE'
       })
       

@@ -75,7 +75,11 @@ body {
 .workout-preview p {
   font-size: 18px;
   color: #66fcf1;
+  font-weight: 700;
 
+}
+span {
+  color: white;
 }
 .workout-preview a{
   text-decoration: none;

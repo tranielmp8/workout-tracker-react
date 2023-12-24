@@ -4,25 +4,27 @@ import { useNavigate } from "react-router-dom";
 const Create = () => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('arms')
-  const [set, setSet] = useState(0)
-  const [reps, setReps] = useState(0)
-  const [weight, setWeight] = useState(0)
+  const [sets, setSets] = useState('')
+  const [reps, setReps] = useState('')
+  const [weight, setWeight] = useState('')
+  // const [date, setDate] = useState(Date.now())
   // const [isComplete, setIsComplete] = useState(false)
 
   //navigation
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const workout = {title, description, set, reps, weight}
+    const workout = {title, description, sets, reps, weight}
 
-    fetch('http://localhost:8000/workouts', {
-      method: 'POST',
+    const res = await fetch('http://localhost:8080/workouts', {
+      method: "POST",
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(workout)
-    }).then(() => {
-      console.log('new blog added')
+  
     })
+    const body = await res.json()
+    console.log(body)
     navigate('/')
 
   }
@@ -37,6 +39,7 @@ const Create = () => {
           required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          
         />
         <label >Workout Description:</label>
         <select
@@ -49,13 +52,23 @@ const Create = () => {
           <option value="back">back</option>
           <option value="glutes">glutes</option>
         </select>
+        {/* <input
+          type="text"
+          value={description}
+          required
+          onChange={(e) => setDescription(e.target.value)}
+        />
+   */}
         <div className="flex">
           <div>
             <label >Number of Sets:</label>
             <input 
               type="number" 
-              value={set}
-              onChange={(e) => setSet(e.target.value)}
+              value={sets}
+              onChange={(e) => setSets(e.target.value)}
+              required
+              min={0}
+              max={1000}
             />
           </div>
           <div>
@@ -64,6 +77,9 @@ const Create = () => {
               type="number" 
               value={reps}
               onChange={(e) => setReps(e.target.value)}
+              required
+              min={0}
+              max={1000}
             />
             </div>
         </div>
@@ -72,6 +88,9 @@ const Create = () => {
               type="number" 
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
+              required
+              min={0}
+              max={1000}
             />
         {/* <div className="complete">
           <label >Completed:</label>
@@ -81,7 +100,8 @@ const Create = () => {
             onChange={(e) => setIsComplete(e.target.value)}
           />
         </div> */}
-
+        
+         
         <button>Add Workout</button>
       </form>
       
